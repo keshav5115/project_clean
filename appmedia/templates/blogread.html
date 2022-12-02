@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>{{data.title}}</h1>
+    <h4>author - {{data.author}}</h4>
+    <img src={{data.photo.url}} alt="author">
+    <p>{{data.textarea}}</p>
+    <button><a href="{% url 'appmedia:blogupdate' pk=data.id %}">update</a></button>
+    <button><a href="{% url 'appmedia:blogdel' pk=data.id %}">delete</a></button>
+    <button><a href="{% url 'appmedia:blogall'  %}">BLOGS</a></button>
+    <button><a href="{% url 'appmedia:blog'  %}" title='click here to create new blog'> create Blog</a></button>
+    
+</body>
+</html>

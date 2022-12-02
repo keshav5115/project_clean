@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+
+        div{
+            border: 2px solid orange;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    {% for i in data %}
+    <a href="{% url 'appmedia:blogread' pk=i.id   %}">
+    <div> 
+        <h4> {{i.title}}</h4>
+        <img src={{i.photo.url}} >
+    </div>
+</a>
+    {% endfor %}
+   <button><a href="{% url 'appmedia:blog' %}" title="click here to create blog">create blog</a></button> 
+</body>
+</html>
